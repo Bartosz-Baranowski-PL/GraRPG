@@ -1,4 +1,4 @@
-package Game;
+package game;
 
 public class EnemySingleton {
     private static EnemySingleton instance;

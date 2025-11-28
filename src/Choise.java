@@ -1,38 +1,27 @@
-package Game;
+import game.Academy;
+import game.DungeonManager;
+import game.HeroSingleton;
+import jobs.JobsRandomizer;
+import masage.UserInputOnput;
 
 import java.util.Scanner;
 
 public class Choise {
     private final Scanner scanner = new Scanner(System.in);
-
     private final HeroSingleton heroSingleton = HeroSingleton.getInstance();
     private final DungeonManager dungeonManager = new DungeonManager();
-    private final JobsManager jobsManager = new JobsManager();
+    JobsRandomizer jobsRandomizer = new JobsRandomizer();
     private final Academy academy = new Academy();
+    private UserInputOnput msg = new UserInputOnput();
 
     public void run() {
-        System.out.println();
-        System.out.println("*___Wstęp___*");
-        System.out.println();
-        System.out.println("Jakie jest Twoje miano?");
-        String name = scanner.next();
+        msg.run();
+        String name = scanner.nextLine();
         heroSingleton.name(name);
 
         boolean gameRun = true;
         while (gameRun) {
-            System.out.println();
-            System.out.println("------MENU------");
-            System.out.println("Co teraz zamierzasz zrobić?");
-            System.out.println("1. Iść zdobyć Dangeuron!!!"); //jest
-            System.out.println("2. Idziesz szukasz pracy."); //do zrobienia, może zrandomizować
-            System.out.println("3. Idziesz do szkoły poprawić swoje parametry."); //do zrobienia
-            System.out.println("4. A może by tak się najeść? To jest to!!! (idziesz do karczmy"); //do zrobienia
-            System.out.println("5. Sprawdz swoje statystyki oraz ekwipunek");
-            System.out.println("Inna cyfra wyłącza grę");
-            System.out.println("------MENU------");
-
-
-            System.out.println("Twój wybór to...: ");
+            msg.choiseOnput();
             int choiseStart = scanner.nextInt();
 
             switch (choiseStart) {
@@ -45,7 +34,7 @@ public class Choise {
                     }
                     break;
                 case 2:
-                    jobsManager.offerJobs();
+                    jobsRandomizer.sprawdzienie();
                     break;
                 case 3:
                     academy.learning();

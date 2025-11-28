@@ -1,15 +1,44 @@
-package Game;
+package jobs;
 
+import game.HeroSingleton;
 import java.util.Random;
 import java.util.Scanner;
 
 public class JobsManager {
-    HeroSingleton heroSingleton = HeroSingleton.getInstance();
-    Random random = new Random();
-    Scanner scanner = new Scanner(System.in);
+    private HeroSingleton heroSingleton = HeroSingleton.getInstance();
+    private Random random = new Random();
+    private Scanner scanner = new Scanner(System.in);
 
+    private double earnings;//do listy i konstruktora jest potrzebne
+    private String descriptionWin; //do listy i konstruktora jest potrzebne
+    private String nameJobs;
+    private String descriptionLose;
 
-    public void offerJobs() {
+    public JobsManager(String nameJobs, double earnings, String descriptionWin, String descriptionLose){
+        this.nameJobs=nameJobs;
+        this.earnings=earnings;
+        this.descriptionWin=descriptionWin;
+    }
+
+    public String getNameJobs() {
+        return nameJobs;
+    }
+
+    public String getDescriptionLose() {
+        return descriptionLose;
+    }
+
+    public String getDescriptionWin() {
+        return descriptionWin;
+    }
+
+    public double getEarnings() {
+        return earnings;
+    }
+
+    public void offerJobs() {//zrendomizuj i zmień opis, może bez pętli, może na zasadzie tablicy? Łatwiej będzie dodawać...
+        // potrzebuje  ile dodaje golda, opis jak się uda, opis jak się nie uda i wartość hp którą wtedy odejmie, choć to może być
+        //choć "jak się nie uda i utrata hp" może być osobną "metodą"... :)
         boolean jobsTrue = true;
         while (jobsTrue) {
             System.out.println();

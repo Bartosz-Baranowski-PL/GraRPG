@@ -1,4 +1,4 @@
-package Game;
+package game;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class HeroSingleton {
         this.strongStat = 4;
         this.skilStat = 4;
         this.dmgInEnemy = strongStat + skilStat;
-        this.money = 100;//
+        this.money = 10;//
     }
 
     public static HeroSingleton getInstance() {
@@ -94,7 +94,7 @@ public class HeroSingleton {
         System.out.println("Zadawany dmg: " + (strongStat + skilStat));
         System.out.println();
         System.out.println("Posiadane złoto: " + money);
-    }
+    } //ZMIEŃ na StringBuildera
 
     public void name(String amount) {
         name = amount;
