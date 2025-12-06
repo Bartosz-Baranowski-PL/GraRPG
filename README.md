@@ -1,6 +1,7 @@
 GraRPG
 Prosty projekt gry RPG napisanej w Java, rozwijany w celach edukacyjnych.
 Repozytorium zawiera podstawowe klasy i mechanizmy, które mogą posłużyć jako fundament do dalszej rozbudowy gry.
+Projekt powstał jako ćwiczenie programistyczne i przykład zastosowania obiektowego podejścia w Javie.
 
 Spis treści
 [Opis projektu](#opis-projektu)
@@ -17,8 +18,6 @@ tworzyć postać,
 eksplorować świat,
 walczyć z przeciwnikami,
 rozwijać swoje statystyki.
-
-Projekt powstał jako ćwiczenie programistyczne i przykład zastosowania obiektowego podejścia w Javie.
 
 Wymagania
 Java 17 lub nowsza
