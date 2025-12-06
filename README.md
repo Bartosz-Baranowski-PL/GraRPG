@@ -9,7 +9,7 @@ Spis treści
 - [Przykładowe funkcje](#przykładowe-funkcje)
 - [Plany rozwoju](##plany-rozwoju)
 - [Autor](##autor)
-- [Podziękowania](podziękowania).
+- [Podziękowania](#podziękowania).
 
 ## Opis projektu
 GraRPG to tekstowa gra RPG, w której gracz może:
