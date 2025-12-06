@@ -1,31 +1,30 @@
-GraRPG
-Prosty projekt gry RPG napisanej w Java, rozwijany w celach edukacyjnych.
-Repozytorium zawiera podstawowe klasy i mechanizmy, które mogą posłużyć jako fundament do dalszej rozbudowy gry.
-Projekt powstał jako ćwiczenie programistyczne i przykład zastosowania obiektowego podejścia w Javie.
+# GraRPG
+To rosty projekt gry RPG napisanej w Java, rozwijany w celach edukacyjnych. Repozytorium zawiera mechanizmy, które mogą posłużyć jako fundament do dalszej rozbudowy gry. Projekt powstał jako ćwiczenie programistyczne i przykład zastosowania obiektowego podejścia w Javie.
 
 Spis treści
-[Opis projektu](#opis-projektu)
-[Wymagania](#wymagania)
-[Instalacja i uruchomienie](#instalacja-i-uruchomienie)
-[Struktura projektu](#struktura-projektu)
-[Przykładowe funkcje](#przykładowe-funkcje)
-[Plany rozwoju](#plany-rozwoju)
-[Autor](#autor)
+- [Opis projektu](#opis-projektu)
+- [Wymagania](#wymagania)
+- [Instalacja i uruchomienie](#instalacja-i-uruchomienie)
+- [Struktura projektu](#struktura-projektu)
+- [Przykładowe funkcje](#przykładowe-funkcje)
+- [Plany rozwoju](##plany-rozwoju)
+- [Autor](##autor)
+- [Podziękowania](podziękowania).
 
-Opis projektu
+## Opis projektu
 GraRPG to tekstowa gra RPG, w której gracz może:
 tworzyć postać,
 eksplorować świat,
 walczyć z przeciwnikami,
 rozwijać swoje statystyki.
 
-Wymagania
+## Wymagania
 Java 17 lub nowsza
 Dowolne IDE (np. IntelliJ IDEA, Eclipse, VS Code)
 System operacyjny: Linux / Windows / macOS
 
 
-Instalacja i uruchomienie
+## Instalacja i uruchomienie
 Sklonuj repozytorium:
 
    git clone https://github.com/Bartosz-Baranowski-PL/GraRPG.git
@@ -42,7 +41,7 @@ Uruchom aplikację:
    java Main
 
 
-Struktura projektu
+## Struktura projektu
 GraRPG/
 ├── src/                # Kod źródłowy gry
 │   ├── Main.java       # Punkt startowy aplikacji
@@ -51,7 +50,7 @@ GraRPG/
 ├── Grarpg.iml          # Plik projektu IntelliJ
 └── .gitignore          # Ignorowane pliki
 
-Funkcje jakie posiada gra:
+## Funkcje jakie posiada gra:
 - Tworzenie postaci z imieniem i statystykami
 - Walka turowa z przeciwnikami
 - System punktów życia i doświadczenia
@@ -59,7 +58,7 @@ Funkcje jakie posiada gra:
 - Zrandomizowany system prac
 
 
-Plany rozwoju
+## Plany rozwoju
 Dodanie ekwipunku i przedmiotów
 Poprawa metod
 zapis i odczyt
@@ -67,8 +66,10 @@ dodanie osiągnięć
 dodanie umiejętności
 
 
-[Autor]
+## Autor
 Projekt stworzony przez: Bartosz Baranowski
+
+## Podziękowania
 
 Dziękuję za wsparcie w nauce i rozwój projektu! 😄 Zwłaszcza:
 - Dawid Bielecki https://github.com/dawciobiel
