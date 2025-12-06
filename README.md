@@ -26,7 +26,7 @@ System operacyjny: Linux / Windows / macOS
    git clone https://github.com/Bartosz-Baranowski-PL/GraRPG.git
 
 
-2.Przejdź do katalogu projektu:
+2. Przejdź do katalogu projektu:
 
    cd GraRPG
 
