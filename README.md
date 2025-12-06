@@ -6,9 +6,9 @@ Spis treści
 - [Wymagania](#wymagania)
 - [Instalacja i uruchomienie](#instalacja-i-uruchomienie)
 - [Struktura projektu](#struktura-projektu)
-- [Przykładowe funkcje](#przykładowe-funkcje)
-- [Plany rozwoju](##plany-rozwoju)
-- [Autor](##autor)
+- [Funkcje jakie posiada gra](#przykładowe-funkcje)
+- [Plany rozwoju](#plany-rozwoju)
+- [Autor](#autor)
 - [Podziękowania](#podziękowania).
 
 ## Opis projektu
@@ -25,17 +25,17 @@ System operacyjny: Linux / Windows / macOS
 
 
 ## Instalacja i uruchomienie
-Sklonuj repozytorium:
+1. Sklonuj repozytorium:
 
    git clone https://github.com/Bartosz-Baranowski-PL/GraRPG.git
 
 
-Przejdź do katalogu projektu:
+2.Przejdź do katalogu projektu:
 
    cd GraRPG
 
 
-Uruchom aplikację:
+3. Uruchom aplikację:
 
    javac src/Main.java
    java Main
