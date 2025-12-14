@@ -55,11 +55,8 @@ GraRPG/
 
 
 ## Plany rozwoju:
-- Dodanie ekwipunku i przedmiotów
 - Poprawa metod
 - Dodanie zapisu i odczytu z pliku
-- Dodanie osiągnięć
-- Dodanie umiejętności
 
 
 ## Autor
