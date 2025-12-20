@@ -1,21 +1,20 @@
 package game;
 
-public class EnemySingleton {
-    private static EnemySingleton instance;
+public class Enemy {
+    private static Enemy instance;
 
-    private EnemySingleton(){
+    private Enemy(){
         this.name="";
         this.level=1;
         this.life = 10;
         this.maxLife = 20;
         this.defend=1;
-        this.strongStat = 2;
-        this.skilStat = 1;
+        this.damage = 3;
     }
 
-    public static EnemySingleton getInstance() {
+    public static Enemy getInstance() {
         if (instance == null) {
-            instance = new EnemySingleton();
+            instance = new Enemy();
         }
         return instance;
     }
@@ -24,8 +23,7 @@ public class EnemySingleton {
     private int life;
     private int maxLife;
     private int defend;
-    private int strongStat;
-    private int skilStat;
+    private int damage;
     public String getName(){
         return name;
     }
@@ -46,12 +44,8 @@ public class EnemySingleton {
         return life;
     }
 
-    public int getStrongStat() {
-        return strongStat;
-    }
-
-    public int getSkilStat() {
-        return skilStat;
+    public int getDamage() {
+        return damage;
     }
 
     public void deadIsNotStrongForMe(){
@@ -67,22 +61,19 @@ public class EnemySingleton {
             name = "The wolf of life";
             maxLife=level*7;
             life=maxLife;
-            skilStat=level*7;
-            strongStat=level;
+            damage =level;
             defend=level+level/2+1;
         } else if (amount==2){
             name = "Golem";
             maxLife=level*20;
             life=maxLife;
-            skilStat=level;
-            strongStat=level;
+            damage =level;
             defend=level*5;
         } else {
             name = "Berserker";
             maxLife=level*5+20;
             life=maxLife;
-            skilStat=level*5;
-            strongStat=level*5;
+            damage =level*5;
             defend=level;
         }
     }
@@ -96,10 +87,5 @@ public class EnemySingleton {
         } else {
             life=liveNow;
         }
-    }
-
-    public int dmgInHero(){
-        int dmgInHero=skilStat+strongStat;
-        return dmgInHero;
     }
 }

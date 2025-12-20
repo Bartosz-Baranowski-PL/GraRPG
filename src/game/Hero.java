@@ -1,48 +1,36 @@
 package game;
 
-import java.util.Scanner;
+public class Hero {
+    private static Hero instance;
 
-public class HeroSingleton {
-    private final Scanner scanner = new Scanner(System.in);
-
-    private static HeroSingleton instance;
-
-    private HeroSingleton() {
+    private Hero() {
         this.name = "Kowal bojowy (Ty)";
         this.level = 1;
         this.experence = 0;
         this.experenceOnNextLevel = 100;
         this.life = 100;
         this.maxLife = 100;
-        this.defendStat = 1;
-        this.strongStat = 4;
-        this.skilStat = 4;
-        this.dmgInEnemy = strongStat + skilStat;
-        this.money = 10;//
+        this.defend = 1;
+        this.damage = 4;
+        this.money = 2;
     }
 
-    public static HeroSingleton getInstance() {
+    public static Hero getInstance() {
         if (instance == null) {
-            instance = new HeroSingleton();
+            instance = new Hero();
         }
         return instance;
     }
 
-    //stats noFight
     private String name;
     private int level;
     private int experence;
     private int experenceOnNextLevel;
     private double money;
-
-    //stats fight
-
-    private int life; // ZROBIENIE MECHANIKI WALKI i innych w których bym odbieral hp
+    private int life;
     private int maxLife;
-    private int defendStat;
-    private int strongStat;
-    private int skilStat;
-    private int dmgInEnemy;
+    private int defend;
+    private int damage;
 
     public int getLevel() {
         return level;
@@ -64,16 +52,12 @@ public class HeroSingleton {
         return maxLife;
     }
 
-    public int getDefendStat() {
-        return defendStat;
+    public int getDefend() {
+        return defend;
     }
 
-    public int getSkilStat() {
-        return skilStat;
-    }
-
-    public int getStrongStat() {
-        return strongStat;
+    public int getDamage() {
+        return damage;
     }
 
     public String getName() {
@@ -89,12 +73,10 @@ public class HeroSingleton {
         System.out.println("Statystyki wynoszą odpowiednio:");
         System.out.println("Level: " + level + " Doświadczenie: " + experence + "/" + experenceOnNextLevel);
         System.out.println("Życie: " + life + "/" + maxLife);
-        System.out.println("Siła: " + strongStat);
-        System.out.println("Zręczność: " + skilStat);
-        System.out.println("Zadawany dmg: " + (strongStat + skilStat));
+        System.out.println("Zadawany damage: " + damage);
         System.out.println();
         System.out.println("Posiadane złoto: " + money);
-    } //ZMIEŃ na StringBuildera
+    }
 
     public void name(String amount) {
         name = amount;
@@ -104,19 +86,17 @@ public class HeroSingleton {
         money += amount;
     }
 
-    public void strongAdd(int amount) {
-        strongStat = strongStat + amount;
+    public int damageAdd(int amount) {
+        damage = damage + amount;
+        return damage;
     }
 
-    public void skillAdd(int amount) {
-        skilStat = skilStat + amount;
+    public int defendAdd(int amount) {
+        defend = defend + amount;
+        return defend;
     }
 
-    public void defendAdd(int amount) {
-        defendStat = defendStat + amount;
-    }
-
-    public void czangeLife(int amount) {
+    public void changeLife(int amount) {
         int liveNow = life + amount;
         if (liveNow > maxLife) {
             life = maxLife;
@@ -137,9 +117,8 @@ public class HeroSingleton {
             experenceOnNextLevel = level * 100;
             maxLife += 10;
             life = maxLife;
-            defendStat = defendStat + 2;
-            strongStat = strongStat + 2;
-            skilStat = skilStat + 2;
+            defend = defend + 2;
+            damage = damage + 2;
             money = money + 10000;
 
             boolean papierzowa = (level == 2137);
@@ -152,10 +131,6 @@ public class HeroSingleton {
         }
     }
 
-    public int dmgInEnemy() {
-        return dmgInEnemy;
-    }
-
     public void tavern() {
         if (money >= 20) {
             money = money - 20;
@@ -166,8 +141,57 @@ public class HeroSingleton {
         }
     }
 
-    public int getDmgInEnemy(){
-        dmgInEnemy=skilStat+strongStat;
-        return dmgInEnemy;
+    public void addDamageStat(int amount){
+        int cost = 0;
+        for (int i = 0; i<amount;i++){
+            cost= damage * 50 + cost;
+            damage++;
+        }
+        System.out.println("Koszt podbicia damage o "+ amount +" pkt kosztuje: "+ cost);
+        damage = damage - amount;
+    }
+
+    public void addDamageStatInformation(int amount){
+        int cost = 0;
+        for (int i = 0; i<amount;i++){
+            cost= damage * 50 + cost;
+            damage++;
+        }
+        money = money-cost;
+        if (money<0){
+            System.out.println("Nie masz wystarczającej ilości złota");
+            money = money+cost;
+            damage = damage-amount;
+        } else {
+            System.out.println("Pozostało złota: " + money);
+            System.out.println("Posiadany damage: " + damage);
+        }
+    }
+
+    public void addDefendStat(int amount){
+        int cost = 0;
+        for (int i = 0; i<amount;i++){
+            cost= defend * 50 + cost;
+            defend++;
+        }
+        System.out.println("Koszt podbicia obrony o "+ amount +" pkt kosztuje: "+ cost);
+        defend = defend -amount;
+    }
+
+    public void addDefendStatInformation(int amount){
+        int cost = 0;
+        for (int i = 0; i<amount;i++){
+            cost= defend * 50 + cost;
+            defend++;
+        }
+        money = money-cost;
+        if (money<0){
+            System.out.println("Nie masz wystarczającej ilości złota");
+            money = money+cost;
+            defend = defend-amount;
+        } else {
+            System.out.println("Pozostało złota: " + money);
+            System.out.println("Posiadana obrona: " + defend);
+        }
     }
 }

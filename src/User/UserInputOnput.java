@@ -1,12 +1,9 @@
-package masage;
+package User;
 
-import game.HeroSingleton;
+import game.Hero;
 
 public class UserInputOnput {
-    private final HeroSingleton heroSingleton = HeroSingleton.getInstance();
-    private int trainingCostStrong = heroSingleton.getStrongStat() * 50;
-    private int trainingCostSkill = heroSingleton.getSkilStat() * 50;
-    private int trainingCostDefend = heroSingleton.getDefendStat() * 50;
+    private final Hero hero = Hero.getInstance();
 
     public void choiseOnput(){
         StringBuilder sb = new StringBuilder();
@@ -22,15 +19,7 @@ public class UserInputOnput {
         sb.append("\nTwój wybór to...:");
         System.out.println(sb);
     }
-    public void academyMsg(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("\n Jaką statystykę chcesz ulepszyć? Posiadasz " + heroSingleton.getMoney() + " golda.\n");
-        sb.append("\n 1. Siłe za " + heroSingleton.getStrongStat() * 50 + " golda? (Dodaje 1 pkt siły)");
-        sb.append("\n 2. Zręczność za " + heroSingleton.getSkilStat() * 50 + " golda? (Dodaje 1 pkt zręczności)");
-        sb.append("\n 3. Obronę za " + heroSingleton.getDefendStat() * 50 + " golda? (Dodaje 1 pkt OBRONY)");
-        sb.append("\n Inna cyfra - wyjście\n");
-        System.out.println(sb);
-    }
+
     public void run(){
         StringBuilder sb = new StringBuilder();
         sb.append("\n *___Wstęp___* \n");
