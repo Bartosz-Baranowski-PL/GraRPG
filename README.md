@@ -7,7 +7,6 @@ To prosty projekt gry typu role-playing game napisanej w języku Java w celach e
 - [Uruchomienie](#instalacja-i-uruchomienie)
 - [Struktura projektu](#struktura-projektu)
 - [Funkcje jakie posiada gra](#przykładowe-funkcje)
-- [Plany rozwoju](#plany-rozwoju)
 - [Autor](#autor)
 - [Podziękowania](#podziękowania).
 
@@ -57,11 +56,6 @@ GraRPG/
 - System punktów życia i doświadczenia
 - Rozwój bohatera poprzez zdobywanie poziomów i rozwijanie statystyk
 - Zrandomizowany system prac
-
-
-## Plany rozwoju
-- Refaktoryzacja istniejącego kodu
-- Dodanie funkcji zapisu i odczytu danych
 
 ## Autor
 - [Bartosz Baranowski](<https://github.com/Bartosz-Baranowski-PL>)
