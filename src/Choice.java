@@ -1,4 +1,6 @@
-import User.UserInputOnput;
+import static java.lang.System.out;
+
+import user.UserInputOnput;
 import game.Academy;
 import game.Dungeon;
 import game.Hero;
@@ -7,47 +9,91 @@ import jobs.JobsRandomizer;
 import java.util.Scanner;
 
 public class Choice {
+
     private final Scanner scanner = new Scanner(System.in);
     private final Hero hero = Hero.getInstance();
-    private final Dungeon dungeon = new Dungeon();
     private final JobsRandomizer jobsRandomizer = new JobsRandomizer();
     private final Academy academy = new Academy();
-    private final UserInputOnput userInputOnput = new UserInputOnput();
+    private final UserInputOnput userInputOnput = new UserInputOnput(); // Literówka w nazwie klasy, powinno być: UserInputOutput
 
     public void run() {
         userInputOnput.run();
-        String name = scanner.nextLine();
-        hero.name(name);
 
-        boolean gameRun = true;
-        while (gameRun) {
+        out.print("Podaj imię bohatera: ");
+        hero.name(scanner.nextLine());
+
+        boolean gameRunning = true;
+
+        while (gameRunning) {
             userInputOnput.choiseOnput();
-            int choiceStart = scanner.nextInt();
 
-            switch (choiceStart) {
-                case 1:
-                    dungeon.dungeon();
-                    if (hero.getLife()<=0){
-                        gameRun=false;
+            int choice = readInt();
+            MenuOption option = MenuOption.fromNumber(choice);
+
+            switch (option) {
+                case DUNGEON:
+                    new Dungeon().dungeon();
+                    if (hero.getLife() <= 0) {
+                        gameRunning = false;
                     }
                     break;
-                case 2:
+
+                case JOB: // Dzięki takiemu używaniu enum nie będzie zgłaszane potencjalne ostrzeżenie "Magic number" za pomocą narzędzi do sprawdzania jakości kodu.
                     jobsRandomizer.test();
                     break;
-                case 3:
+
+                case ACADEMY:
                     academy.learning();
                     break;
-                case 4:
+
+                case TAVERN:
                     hero.tavern();
                     break;
-                case 5:
+
+                case STATS:
                     hero.stats();
                     break;
+
+                case EXIT:
                 default:
-                    System.out.println("Gra została zakończona");
-                    gameRun=false;
+                    out.println("Gra została zakończona.");
+                    gameRunning = false;
                     break;
             }
+        }
+    }
+
+    private int readInt() {
+        while (!scanner.hasNextInt()) {
+            out.println("Wprowadź poprawny numer.");
+            scanner.next();
+        }
+        int value = scanner.nextInt();
+        scanner.nextLine(); // czyszczenie bufora
+        return value;
+    }
+
+    private enum MenuOption {
+        DUNGEON(1),
+        JOB(2),
+        ACADEMY(3),
+        TAVERN(4),
+        STATS(5),
+        EXIT(0);
+
+        private final int number;
+
+        MenuOption(int number) {
+            this.number = number;
+        }
+
+        public static MenuOption fromNumber(int number) {
+            for (MenuOption option : values()) {
+                if (option.number == number) {
+                    return option;
+                }
+            }
+            return EXIT;
         }
     }
 }
