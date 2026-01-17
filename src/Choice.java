@@ -1,10 +1,10 @@
 import static java.lang.System.out;
 
-import user.UserInputOnput;
 import game.Academy;
 import game.Dungeon;
 import game.Hero;
 import jobs.JobsRandomizer;
+import user.UserInputOutput;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class Choice {
     private final Hero hero = Hero.getInstance();
     private final JobsRandomizer jobsRandomizer = new JobsRandomizer();
     private final Academy academy = new Academy();
-    private final UserInputOnput userInputOnput = new UserInputOnput(); // Literówka w nazwie klasy, powinno być: UserInputOutput
+    private final UserInputOutput userInputOnput = new UserInputOutput(); // Literówka w nazwie klasy, powinno być: UserInputOutput
 
     public void run() {
         userInputOnput.run();
@@ -25,7 +25,7 @@ public class Choice {
         boolean gameRunning = true;
 
         while (gameRunning) {
-            userInputOnput.choiseOnput();
+            userInputOnput.choiceOutput();
 
             int choice = readInt();
             MenuOption option = MenuOption.fromNumber(choice);

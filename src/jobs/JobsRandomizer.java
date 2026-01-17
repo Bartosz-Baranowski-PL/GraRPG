@@ -8,7 +8,6 @@ import java.util.Random;
 
 public class JobsRandomizer {
 private final List<JobsManager> list;
-private StringBuilder sb = new StringBuilder();
 private Random random = new Random();
 private Hero hero = Hero.getInstance();
 
@@ -25,21 +24,22 @@ private Hero hero = Hero.getInstance();
     }
 
     public void test(){
-        sb.append("Wielkość listy to: "+list.size());
+        StringBuilder sb = new StringBuilder();
         int losowanie = random.nextInt(list.size());
         sb.append("\n Znalazłeś pracę jako: "+list.get(losowanie).getNameJobs());
         int czyZarobił = random.nextInt(10);
-        if (czyZarobił>8){
+        if (czyZarobił>2){
             list.get(losowanie).getDescriptionWin();
-            sb.append("Zarobiłeś "+list.get(losowanie).getEarnings());
+            sb.append("\n Zarobiłeś "+list.get(losowanie).getEarnings());
             hero.czangeMoney(list.get(losowanie).getEarnings());
+            sb.append("\n Masz teraz "+hero.getMoney()+" golda.");
         } else {
             list.get(losowanie).getDescriptionLose();
             hero.changeLife(-20);
             if (hero.getLife()<=0){
-                sb.append("Wykazano śmierć");
+                sb.append("\n Umarło Ci się...");
             } else {
-                sb.append("Stracono 20hp");
+                sb.append("\n Straciłeś 20 hp.... Zostało Ci "+hero.getLife()+" życia.");
             }
         }
         System.out.println(sb);
