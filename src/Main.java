@@ -1,7 +1,15 @@
+import game.Academy.Skills.Skills.Blacksmithing;
+
 public class Main {
     public static void main(String[] args) {
-        Choice choice = new Choice();
-        choice.run();
+        Blacksmithing blacksmithing = new Blacksmithing();
+        blacksmithing.Use();
+
+
+
+
+       // Choice choice = new Choice();
+      //  choice.run();
     }
 
 }

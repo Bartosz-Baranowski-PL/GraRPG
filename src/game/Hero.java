@@ -12,7 +12,7 @@ public class Hero {
         this.maxLife = 100;
         this.defend = 1;
         this.damage = 4;
-        this.money = 2;
+        this.money = 1200;
     }
 
     public static Hero getInstance() {
@@ -26,7 +26,7 @@ public class Hero {
     private int level;
     private int experence;
     private int experenceOnNextLevel;
-    private double money;
+    private int money;
     private int life;
     private int maxLife;
     private int defend;

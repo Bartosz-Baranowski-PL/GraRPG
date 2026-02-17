@@ -1,6 +1,6 @@
 import static java.lang.System.out;
 
-import game.Academy;
+import game.Academy.Stats;
 import game.Dungeon;
 import game.Hero;
 import jobs.JobsRandomizer;
@@ -13,7 +13,7 @@ public class Choice {
     private final Scanner scanner = new Scanner(System.in);
     private final Hero hero = Hero.getInstance();
     private final JobsRandomizer jobsRandomizer = new JobsRandomizer();
-    private final Academy academy = new Academy();
+    private final Stats stats = new Stats();
     private final UserInputOutput userInputOnput = new UserInputOutput(); // Literówka w nazwie klasy, powinno być: UserInputOutput
 
     public void run() {
@@ -43,7 +43,7 @@ public class Choice {
                     break;
 
                 case ACADEMY:
-                    academy.learning();
+                    stats.learning();
                     break;
 
                 case TAVERN:

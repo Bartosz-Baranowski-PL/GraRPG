@@ -1,8 +1,10 @@
-package game;
+package game.Academy;
+
+import game.Hero;
 
 import java.util.Scanner;
 
-public class Academy {
+public class Stats {
     private final Hero hero = Hero.getInstance();
     private final Scanner scanner = new Scanner(System.in);
 
@@ -14,14 +16,13 @@ public class Academy {
         hero.addDamageStat(5);
         hero.addDefendStat(1);
         hero.addDefendStat(5);
-        System.out.println();
-        System.out.println("Którą opcję wybierasz");
-        System.out.println("1. Dodanie 1 pkt siły");
-        System.out.println("2. Dodanie 5 pkt siły");
-        System.out.println("3. Dodanie 1 pkt obrony");
-        System.out.println("4. Dodanie 5 pkt obrony");
-        System.out.println("5. Uznajesz, że jednak nie chcesz podwyższać swoich statystyk");
-        System.out.println();
+        System.out.println("\nKtórą opcję wybierasz?"+
+        "\n1. Dodanie 1 pkt siły"+
+        "\n2. Dodanie 5 pkt siły"+
+        "\n3. Dodanie 1 pkt obrony"+
+        "\n4. Dodanie 5 pkt obrony"+
+        "\n5. Uznajesz, że jednak nie chcesz podwyższać swoich statystyk"+
+        "\n");
 
         int choice = scanner.nextInt();
         switch (choice) {
