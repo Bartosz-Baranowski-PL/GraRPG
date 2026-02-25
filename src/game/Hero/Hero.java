@@ -1,4 +1,4 @@
-package game;
+package game.Hero;
 
 public class Hero {
     private static Hero instance;
@@ -69,20 +69,20 @@ public class Hero {
     }
 
     public void stats() {
-        System.out.println();
-        System.out.println("Statystyki wynoszą odpowiednio:");
-        System.out.println("Level: " + level + " Doświadczenie: " + experence + "/" + experenceOnNextLevel);
-        System.out.println("Życie: " + life + "/" + maxLife);
-        System.out.println("Zadawany damage: " + damage);
-        System.out.println();
-        System.out.println("Posiadane złoto: " + money);
+        System.out.println("\n Statystyki wynoszą odpowiednio:" +
+                "\n Level: "+level+
+                "\n Doświadczenie: "+experence+"/"+experenceOnNextLevel+
+                "\n Życie: "+life+"/"+maxLife+
+                "\n Zadawany damage: "+damage+
+                "\n Posiadana obrona: "+defend+"\n"+
+                "\n Posiadane złoto: "+money);
     }
 
     public void name(String amount) {
         name = amount;
     }
 
-    public void czangeMoney(double amount) {
+    public void czangeMoney(int amount) {
         money += amount;
     }
 
@@ -92,7 +92,7 @@ public class Hero {
     }
 
     public int defendAdd(int amount) {
-        defend = defend + amount;
+        defend +=amount;
         return defend;
     }
 

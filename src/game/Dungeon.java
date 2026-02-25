@@ -1,5 +1,7 @@
 package game;
 
+import game.Hero.Hero;
+
 import java.util.Random;
 import java.util.Scanner;
 

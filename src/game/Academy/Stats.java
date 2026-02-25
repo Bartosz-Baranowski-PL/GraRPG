@@ -1,6 +1,6 @@
 package game.Academy;
 
-import game.Hero;
+import game.Hero.Hero;
 
 import java.util.Scanner;
 

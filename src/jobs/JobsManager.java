@@ -1,12 +1,12 @@
 package jobs;
 
 public class JobsManager {
-    private double earnings;
+    private int earnings;
     private String descriptionWin;
     private String nameJobs;
     private String descriptionLose;
 
-    public JobsManager(String nameJobs, double earnings, String descriptionWin, String descriptionLose){
+    public JobsManager(String nameJobs, int earnings, String descriptionWin, String descriptionLose){
         this.nameJobs=nameJobs;
         this.earnings=earnings;
         this.descriptionWin=descriptionWin;
@@ -25,7 +25,7 @@ public class JobsManager {
         return descriptionWin;
     }
 
-    public double getEarnings() {
+    public int getEarnings() {
         return earnings;
     }
 }

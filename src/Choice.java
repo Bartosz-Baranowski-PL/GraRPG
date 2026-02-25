@@ -2,7 +2,7 @@ import static java.lang.System.out;
 
 import game.Academy.Stats;
 import game.Dungeon;
-import game.Hero;
+import game.Hero.Hero;
 import jobs.JobsRandomizer;
 import user.UserInputOutput;
 

@@ -57,24 +57,26 @@ public class Enemy {
     }
 
     public void enemyDraw(int amount){
-        if (amount==1) {
-            name = "The wolf of life";
-            maxLife=level*7;
-            life=maxLife;
-            damage =level;
-            defend=level+level/2+1;
-        } else if (amount==2){
-            name = "Golem";
-            maxLife=level*20;
-            life=maxLife;
-            damage =level;
-            defend=level*5;
-        } else {
-            name = "Berserker";
-            maxLife=level*5+20;
-            life=maxLife;
-            damage =level*5;
-            defend=level;
+        switch (amount){
+            case 1:
+                name = "The wolf of life";
+                maxLife=level*7;
+                life=maxLife;
+                damage =level;
+                defend=level+level/2+1;
+            case 2:
+                name = "Golem";
+                maxLife=level*20;
+                life=maxLife;
+                damage =level;
+                defend=level*5;
+            case 3:
+                name = "Berserker";
+                maxLife=level*5+20;
+                life=maxLife;
+                damage =level*5;
+                defend=level;
+
         }
     }
 

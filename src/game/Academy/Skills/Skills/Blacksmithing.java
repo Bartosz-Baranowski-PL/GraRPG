@@ -1,65 +1,61 @@
 package game.Academy.Skills.Skills;
 
-import game.Academy.Skills.Base.BaseSkill;
-import game.Academy.Skills.Base.SkillCalculations;
-import game.Hero;
 
-import java.util.Scanner;
-
-public class Blacksmithing extends BaseSkill implements SkillCalculations {
-    private Scanner scanner = new Scanner(System.in);
-
-    private String name = "Blacksmithing";
-
+public class Blacksmithing {
+    private final String name = "Blacksmithing";
     private int level = 1;
-    private int expOnNextLevel = level*100;
-    private int experence = 0;
-    private int cost = 1500;
+    private int experenceOnNextLevel = level * 100+100;
+    private int experenceSkill = 0;
 
-    private Hero hero = Hero.getInstance();
+    private static Blacksmithing instance;
 
-    @Override
-    public void name() {
-        System.out.println("Jak zastosować logikę rodzica z danymi dziecka?");
+    public static Blacksmithing getInstance() {
+        if (instance == null) {
+            instance = new Blacksmithing();
+        }
+        return instance;
     }
 
-    @Override
-    public int showLevel() {
-        System.out.println(level);
+
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
         return level;
     }
 
-    @Override
-    public int levelAdd() {
-        level++;
-        System.out.println(level);
-        return level;
+    public int getExperenceOnNextLevel() {
+        return experenceOnNextLevel;
+    }
+
+    public int getExperenceSkill() {
+        return experenceSkill;
+    }
+
+    public void addExperence(int value) {
+        experenceSkill += value;
+        if (experenceSkill >= experenceOnNextLevel) {
+            level++;
+            experenceOnNextLevel = level * 100;
+            System.out.println("Właśnie awansowałeś umiejętność!!! Ma teraz " + level + " level" +
+                    "\n Wbite doświadczenie/wymagane doświadczenie --> " + experenceSkill + "/" + experenceOnNextLevel);
+        } else {
+            showExpLevelSkill();
+        }
+    }
+
+    public void showExpLevelSkill(){
+        System.out.println(getName()+
+                "\nPoziom: "+getLevel()+" Doświadczenie: "+experenceSkill+"/"+experenceOnNextLevel);
     }
 
     @Override
-    public int calculateNextLevelExp() {
-        expOnNextLevel=level*100;
-        System.out.println(expOnNextLevel);
-        return expOnNextLevel;
-    }
+    public String toString() {
+        return
+                "\nNazwa: " + name +
+                "\nLevel: " + level +
+                "\nDoświadczenie: " + experenceSkill+"/"+experenceOnNextLevel;
 
-    @Override
-    public int experence() {
-        return 0;
-    }
-
-    @Override
-    public int missingExp() {
-        return 0;
-    }
-
-    @Override
-    public int costSkill() {
-        return 0;
-    }
-
-    @Override
-    public String informacionSkill() {
-        return "";
     }
 }

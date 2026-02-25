@@ -1,6 +1,6 @@
 package jobs;
 
-import game.Hero;
+import game.Hero.Hero;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ private Hero hero = Hero.getInstance();
         list=new ArrayList<>();
         list.add(new JobsManager("Ochroniarz pastwiska Zielone Krówki",2000,
                 " opis pracy", "Zostałeś pobity i tracisz 20hp"));
-        list.add(new JobsManager("Ochroniarz na weselu",2111,
+        list.add(new JobsManager("Ochroniarz na weselu",2000,
                 "Co mi tu mamy", "Życie jest Ci nie miłe i rzuciłeś sie z mostu"));
-        list.add(new JobsManager("Ochroniarz transportu",3200,
+        list.add(new JobsManager("Ochroniarz transportu",2000,
                 "Opisz pracy v2", "A co to to to jest ;D"));
-        list.add(new JobsManager("Strażnik miejski",3200,
+        list.add(new JobsManager("Strażnik miejski",2000,
                 "Opisz pracy v3", "v2 A co to to to jest ;D"));
     }
 
