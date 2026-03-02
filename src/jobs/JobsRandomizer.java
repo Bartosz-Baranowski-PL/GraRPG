@@ -1,6 +1,6 @@
 package jobs;
 
-import game.Hero.Hero;
+import game.hero.Hero;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ private Hero hero = Hero.getInstance();
                 "Opisz pracy v3", "v2 A co to to to jest ;D"));
     }
 
-    public void test(){
+    public void randomChoiceJob(){
         StringBuilder sb = new StringBuilder();
         int losowanie = random.nextInt(list.size());
         sb.append("\n Znalazłeś pracę jako: "+list.get(losowanie).getNameJobs());
