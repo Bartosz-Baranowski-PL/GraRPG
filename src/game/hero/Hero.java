@@ -1,4 +1,4 @@
-package game.Hero;
+package game.hero;
 
 public class Hero {
     private static Hero instance;
@@ -8,10 +8,10 @@ public class Hero {
         this.level = 1;
         this.experence = 0;
         this.experenceOnNextLevel = 100;
-        this.life = 100;
-        this.maxLife = 100;
+        this.life = 10000;
+        this.maxLife = 10000;
         this.defend = 1;
-        this.damage = 4;
+        this.damage = 20;
         this.money = 1200;
     }
 
@@ -133,7 +133,7 @@ public class Hero {
 
     public void tavern() {
         if (money >= 20) {
-            money = money - 20;
+            money -=20;
             life = maxLife;
             System.out.println("Zapłaciłeś 20 golda i przywróciłeś sobie maksymalne życie!!!");
         } else {

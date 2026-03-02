@@ -1,21 +1,21 @@
-package game.Academy.Skills.Skills;
+package game.academy.skills.abstractClass;
+
+public class SkillsAbstract {
+    private String name;
+    private int level;
+    private int experenceOnNextLevel;
+    private int experenceSkill;
+    private int cost;
 
 
-public class Blacksmithing {
-    private final String name = "Blacksmithing";
-    private int level = 1;
-    private int experenceOnNextLevel = level * 100+100;
-    private int experenceSkill = 0;
 
-    private static Blacksmithing instance;
-
-    public static Blacksmithing getInstance() {
-        if (instance == null) {
-            instance = new Blacksmithing();
-        }
-        return instance;
+    public SkillsAbstract(String name, int level, int experenceOnNextLevel, int experenceSkill, int cost) {
+        this.name = name;
+        this.level = level;
+        this.experenceOnNextLevel = experenceOnNextLevel;
+        this.experenceSkill = experenceSkill;
+        this.cost = cost;
     }
-
 
     public String getName() {
         return name;
@@ -33,6 +33,10 @@ public class Blacksmithing {
         return experenceSkill;
     }
 
+    public int getCost() {
+        return cost;
+    }
+
     public void addExperence(int value) {
         experenceSkill += value;
         if (experenceSkill >= experenceOnNextLevel) {
@@ -41,7 +45,7 @@ public class Blacksmithing {
             System.out.println("Właśnie awansowałeś umiejętność!!! Ma teraz " + level + " level" +
                     "\n Wbite doświadczenie/wymagane doświadczenie --> " + experenceSkill + "/" + experenceOnNextLevel);
         } else {
-            showExpLevelSkill();
+            System.out.println(experenceSkill);
         }
     }
 
@@ -53,9 +57,11 @@ public class Blacksmithing {
     @Override
     public String toString() {
         return
-                "\nNazwa: " + name +
-                "\nLevel: " + level +
-                "\nDoświadczenie: " + experenceSkill+"/"+experenceOnNextLevel;
-
+                "name='" + name + '\'' +
+                "\n level=" + level +
+                "\n experenceOnNextLevel=" + experenceOnNextLevel +
+                "\n experenceSkill=" + experenceSkill +
+                "\n cost=" + cost +
+                '}';
     }
 }

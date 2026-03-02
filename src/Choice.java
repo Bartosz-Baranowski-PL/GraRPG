@@ -1,12 +1,12 @@
-import static java.lang.System.out;
-
-import game.Academy.Stats;
-import game.Dungeon;
-import game.Hero.Hero;
+import game.academy.Stats;
+import game.enemy.Fight;
+import game.hero.Hero;
 import jobs.JobsRandomizer;
 import user.UserInputOutput;
 
 import java.util.Scanner;
+
+import static java.lang.System.out;
 
 public class Choice {
 
@@ -14,7 +14,7 @@ public class Choice {
     private final Hero hero = Hero.getInstance();
     private final JobsRandomizer jobsRandomizer = new JobsRandomizer();
     private final Stats stats = new Stats();
-    private final UserInputOutput userInputOnput = new UserInputOutput(); // Literówka w nazwie klasy, powinno być: UserInputOutput
+    private final UserInputOutput userInputOnput = new UserInputOutput();
 
     public void run() {
         userInputOnput.run();
@@ -32,14 +32,14 @@ public class Choice {
 
             switch (option) {
                 case DUNGEON:
-                    new Dungeon().dungeon();
+                    new Fight().mechanizmFight();
                     if (hero.getLife() <= 0) {
                         gameRunning = false;
                     }
                     break;
 
-                case JOB: // Dzięki takiemu używaniu enum nie będzie zgłaszane potencjalne ostrzeżenie "Magic number" za pomocą narzędzi do sprawdzania jakości kodu.
-                    jobsRandomizer.test();
+                case JOB:
+                    jobsRandomizer.randomChoiceJob();
                     break;
 
                 case ACADEMY:
